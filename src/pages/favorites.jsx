@@ -1,6 +1,7 @@
 import "../css/Favorite.css";
 import { useMovieContext } from "../context/MovieContext";
-import MovieCard from "../components/MovieCard";
+import MovieCard from "../components/movieCard";
+import ShowCard from "../components/showCard";
 
 function Favorites() {
     const { favorites } = useMovieContext();
@@ -10,9 +11,13 @@ function Favorites() {
             <div className="favorites">
                 <h2>Your Favorites</h2>
                 <div className="movie-grid">
-                    {favorites.map((movie) => (
-                        <MovieCard movie={movie} key={movie.id} />
-                    ))}
+                    {favorites.map((item) =>
+                        item.title ? (
+                            <MovieCard movie={item} key={item.id} />
+                        ) : (
+                            <ShowCard show={item} key={item.id} />
+                        )
+                    )}
                 </div>
             </div>
         );
