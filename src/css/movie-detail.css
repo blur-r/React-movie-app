@@ -1,0 +1,50 @@
+h1 {
+    text-align: center;
+}
+
+.flex {
+    display: flex;
+    gap: 10px;
+    margin-top: 50px;
+}
+
+.movie-detail {
+    position: relative;
+    color: white;
+    padding: 2rem;
+    overflow: hidden;
+}
+
+.movie-backdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    /* Adjust as needed */
+    z-index: 0;
+    filter: brightness(0.6);
+    /* Optional: darken the backdrop */
+}
+
+.movie-content {
+    position: relative;
+    z-index: 1;
+    /* Ensures content sits on top of the backdrop */
+}
+
+@media screen and (max-width: 900px) {
+    .flex {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.5rem;
+    }
+
+}

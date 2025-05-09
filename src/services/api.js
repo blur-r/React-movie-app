@@ -7,6 +7,13 @@ export const getPopularMovies = async () => {
     return data.results
 };
 
+export async function getMovieDetails(id) {
+    const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${API_KEY}`);
+    if (!response.ok) throw new Error("Failed to fetch movie details");
+    const data = await response.json();
+    return data;
+}
+
 export const searchMovies = async (query) => {
     const response = await fetch(`${BASE_URL}/search/movie?api_key=${API_KEY}&query=${encodeURIComponent(query)}`);
     const data = await response.json();
@@ -17,6 +24,13 @@ export const getPopularShows = async () => {
     const response = await fetch(`${BASE_URL}/tv/popular?api_key=${API_KEY}`);
     const data = await response.json();
     return data.results
+}
+
+export async function getShowDetails(id) {
+    const response = await fetch(`https://api.themoviedb.org/3/tv/${id}?api_key=${API_KEY}`);
+    if (!response.ok) throw new Error("Failed to fetch show details");
+    const data = await response.json();
+    return data;
 }
 
 export const searchShows = async (query) => {
