@@ -50,3 +50,9 @@
 .movies-grid>* {
     animation: fadeIn 0.3s ease-out forwards;
 }
+
+@media screen and (max-width: 392px) {
+    .favorites h2 {
+        font-size: 30px;
+    }
+}

@@ -9,7 +9,7 @@ function Favorites() {
     if (favorites && favorites.length > 0) {
         return (
             <div className="favorites">
-                <h2>Your Favorites</h2>
+                <h2 className="fav">Your Favorites</h2>
                 <div className="movie-grid">
                     {favorites.map((item) =>
                         item.title ? (
