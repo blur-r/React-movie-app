@@ -52,3 +52,14 @@
         font-size: 13px;
     }
 }
+
+@media screen and (max-width: 330px) {
+    .navbar-brand {
+
+        color: red !important;
+    }
+
+    .app-name {
+        font-size: 16px;
+    }
+}
